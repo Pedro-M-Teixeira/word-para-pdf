@@ -50,7 +50,7 @@ jobs:
           path: dist/Word_para_PDF.exe
 
       - name: Anexar à Release
-        if: github.event_name == release
+        if: github.event_name == 'release'
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
