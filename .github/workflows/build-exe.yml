@@ -1,0 +1,57 @@
+name: Gerar .exe
+
+# Gera Word_para_PDF.exe num computador Windows do GitHub.
+#  - Ao publicar uma Release: o .exe é anexado automaticamente a essa Release.
+#  - Manualmente (Actions -> Gerar .exe -> Run workflow): o .exe fica como "artefacto".
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Gerar executável
+        run: >
+          pyinstaller --noconfirm --onefile --windowed
+          --name Word_para_PDF
+          --hidden-import pythoncom
+          --hidden-import pywintypes
+          --hidden-import win32com
+          --hidden-import win32com.client
+          --hidden-import win32timezone
+          word_para_pdf.py
+
+      - name: Autoteste do executável
+        shell: pwsh
+        run: |
+          $saida = Join-Path $PWD "autoteste.txt"
+          $p = Start-Process -FilePath "dist\Word_para_PDF.exe" -ArgumentList "--autoteste", "`"$saida`"" -Wait -PassThru
+          Get-Content $saida
+          if ($p.ExitCode -ne 0) { throw "O autoteste do executável falhou." }
+
+      - name: Guardar como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: Word_para_PDF
+          path: dist/Word_para_PDF.exe
+
+      - name: Anexar à Release
+        if: github.event_name == release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.event.release.tag_name }}" dist/Word_para_PDF.exe --clobber
