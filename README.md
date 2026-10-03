@@ -1,3 +1,6 @@
+[![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 # Word → PDF (executável para Windows)
 
 Programa com janela: escolhes uma pasta, ele converte todos os `.doc` e `.docx` para PDF
@@ -13,24 +16,8 @@ e guarda-os numa subpasta `PDF`. Corre no computador de quem o usa — nada vai 
 Requisito: ter o **Microsoft Word** instalado (é o motor preferido) ou o **LibreOffice** (gratuito).
 Não é preciso instalar Python.
 
-## Para quem publica (uma só vez)
 
-1. Criar uma conta em <https://github.com> e um repositório **público** (ex.: `word-para-pdf`).
-2. Carregar para o repositório os ficheiros desta pasta (**Add file → Upload files**):
-   `word_para_pdf.py`, `requirements.txt`, `.gitignore` e a pasta `.github`.
-   - Se a pasta `.github` não for aceite ao arrastar: **Add file → Create new file**, escrever
-     `.github/workflows/build-exe.yml` como nome e colar lá o conteúdo do ficheiro.
-3. **Settings → Actions → General → Workflow permissions** → **Read and write permissions** → Save.
-4. **Releases → Create a new release**:
-   - em *Choose a tag* escrever `v1.0.0` e escolher *Create new tag*;
-   - dar um título (ex.: “Word para PDF 1.0”) e carregar em **Publish release**.
-5. Abrir o separador **Actions**: o trabalho “Gerar .exe” demora cerca de 2–4 minutos.
-   Quando terminar (visto verde), a Release passa a ter o ficheiro `Word_para_PDF.exe`.
-6. Partilhar o link `https://github.com/<utilizador>/<repositório>/releases/latest`.
 
-Para lançar uma versão nova: editar o código, e repetir o passo 4 com outra etiqueta (`v1.0.1`).
-Para só testar sem publicar: **Actions → Gerar .exe → Run workflow**; o `.exe` fica disponível
-como “artefacto” no fim da execução (descarregável durante 90 dias).
 
 ## Notas
 
