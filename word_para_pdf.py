@@ -203,7 +203,7 @@ def abrir_gui():
     from tkinter import filedialog, messagebox, ttk
 
     root = tk.Tk()
-    root.title("Word → PDF")
+    root.title("Converter Word → PDF em Lote | Versão Gratuita | Pedro Teixeira 2026")
     root.geometry("640x420")
 
     subpastas = tk.BooleanVar(value=False)
