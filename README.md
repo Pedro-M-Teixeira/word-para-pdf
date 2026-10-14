@@ -8,7 +8,7 @@ e guarda-os numa subpasta `PDF`. Corre no computador de quem o usa — nada vai 
 
 ## Para quem vai usar (utilizador final)
 
-1. Descarregar `Word_para_PDF.exe` da página **Releases** do repositório.
+1. Descarregar `Word_para_PDF.exe` da página **Releases** do repositório https://github.com/Pedro-M-Teixeira/word-para-pdf/releases/latest.
 2. Fazer duplo clique. Se o Windows mostrar “O Windows protegeu o computador”
    (o ficheiro não está assinado digitalmente): **Mais informações → Executar mesmo assim**.
 3. **Escolher pasta…** → **Converter para PDF**.
