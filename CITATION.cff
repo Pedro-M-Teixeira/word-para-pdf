@@ -1,0 +1,20 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: word para pdf em massa
+message: Transforma vários documentos word para pdf simultaneamente
+type: software
+authors:
+  - given-names: Pedro Miguel
+    family-names: Marques Teixeira
+    email: pmtex69@gmail.com
+    orcid: 'https://orcid.org/0009-0005-7035-6736'
+repository-code: 'https://doi.org/10.5281/zenodo.23458306'
+abstract: >-
+  escolhes uma pasta, ele converte todos os .doc e .docx
+  para PDF e guarda-os numa subpasta PDF. Corre no
+  computador de quem o usa — nada vai para a nuvem
+license: MIT
+version: 1.0.3
+date-released: '2026-10-18'
