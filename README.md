@@ -3,6 +3,7 @@
 [![DOI](https://zenodo.org/badge/1399789130.svg)](https://doi.org/10.5281/zenodo.23458305)
 
 Para citar este software:
+
 Pedro Teixeira. (2026). Pedro-M-Teixeira/word para pdf em massa: word-para-pdf_v1.0.3 (Version v1.0.3) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23458306
 
 # Word → PDF (executável para Windows)
